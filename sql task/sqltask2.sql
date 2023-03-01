@@ -16,7 +16,7 @@ insert into Football_Venue values(5,"Sweden",111,90000);
 insert into Football_Venue values(6,"Poland",114,100500);
 insert into Football_Venue values(7,"Switzerland",507,96025);
 insert into Football_Venue values(8,"Argentina",508,87560);
-insert into Football_Venue values(9,"Russia",509,87520);
+insert into Football_Venue values(9,"Australia",509,87520);
 insert into Football_Venue values(10,"France",510,100750);
 -- 4)Count the number of venues of the football world cup
 select count(Venue_Country)  from footballvenue;
@@ -26,4 +26,4 @@ select  Venue_Country as Location ,
 Stadium_Capacity as Volume from footballvenue
 -- 6) Delete all the details where Venue_Country is equal to “Australia”
 
-delete from  footballvenue where venue_name="Russia";
+delete from  footballvenue where venue_name="Australia";
