@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class charCount {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        BufferedReader read = null;
+        int c = 0;
+        try {
+            System.out.println("Input:filePath");
+            String path=sc.next();
+            read = new BufferedReader(new FileReader(path));
+            int ch = read.read();
+            while (ch != -1) {
+                c++;
+                ch = read.read();
+                System.out.print((char)ch);
+            }
+            System.out.println("No of characters in the file " + count);
+        } 
+        catch (IOException exe) {
+            System.out.println("error:" + exe.getMessage());
+        } 
+        finally {
+            try {
+                if (read != null) {
+                    read.close();
+                }
+            } catch (IOException exe) {
+                System.out.println("error:" + exe.getMessage());
+            }
+        }
+    }
+}

@@ -1,0 +1,179 @@
+import java.util.*;
+public class consolecal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choose = -1;
+        while (choose != 0) {
+           Option();
+            choose=sc.nextInt();
+            switch(choose) {
+                case 0:
+                    System.out.println("Thank You!");
+                    break;
+                case 1:
+                    double sum=addition(sc);
+                    System.out.println("Result: " + sum);
+                    break;
+                case 2:
+                    double diff=subtraction(sc);
+                    System.out.println("Result: " + diff);
+                    break;
+                case 3:
+                    double product=multiplication(sc);
+                    System.out.println("Result: " + product);
+                    break;
+                case 4:
+                    double divide=division(sc);
+                    System.out.println("Result: " + divide);
+                    break;
+                case 5:
+                    double percentage=percentage(sc);
+                    System.out.println("Result: " + percentage + "%");
+                    break;
+                case 6:
+                    double factorial = factorial(sc);
+                    System.out.println("Result: " + factorial);
+                    break;
+                case 7:
+                    double square = square(sc);
+                    System.out.println("Result: " + square);
+                    break;
+                case 8:
+                    double cube = cube(sc);
+                    System.out.println("Result: " + cube);
+                    break;
+                case 9:
+                    double squareRoot = squareRoot(sc);
+                    System.out.println("Result: " + squareRoot);
+                    break;
+                case 10:
+                    double power = power(sc);
+                    System.out.println("Result: " + power);
+                    break;
+                case 11:
+                    double root = root(sc);
+                    System.out.println("Result: " + root);
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    break;
+            }
+            if (choose != 0) {
+                System.out.println("Press enter to continue...");
+                
+            }
+        }
+        
+    }
+    public static void  Option() {
+        System.out.println("Console Calculator");
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+        System.out.println("5. Percentage");
+        System.out.println("6. Factorial");
+        System.out.println("7. Square");
+        System.out.println("8. Cube");
+        System.out.println("9. Square Root");
+        System.out.println("10. a Power b");
+        System.out.println("11. a Root b");
+        System.out.println("0. Exit");
+        System.out.print("Enter option ");
+    }
+
+    public static double addition(Scanner sc) {
+        System.out.println("Enter two numbers to add:");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        return a + b;
+    }
+
+    public static double subtraction(Scanner sc) {
+        System.out.println("Enter two numbers to subtract:");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        return a - b;
+    }
+
+    public static double multiplication(Scanner sc) {
+        System.out.println("Enter two numbers to multiply:");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        return a * b;
+    }
+
+    public static double division(Scanner sc) {
+        System.out.println("Enter two numbers to divide:");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        if (b == 0)
+        {
+System.out.println("Error: division by zero");
+}
+return a / b;
+}
+public static double percentage(Scanner sc) {
+    System.out.println("Enter a number to find its percentage:");
+    double a = sc.nextDouble();
+    return a * 100;
+}
+
+public static double factorial(Scanner sc) {
+    System.out.println("Enter a number find its factorial:");
+    int a = sc.nextInt();
+    if (a < 0) {
+        System.out.println("Error: factorial of a negative number is undefined");
+     
+    }
+    int res = 1;
+    for (int i = 2; i <= x; i++) {
+        res *= i;
+    }
+    return res;
+}
+
+public static double square(Scanner sc) {
+    System.out.println("Enter a number to find its square:");
+    double a = sc.nextDouble();
+    return a * a;
+}
+
+public static double cube(Scanner sc) {
+    System.out.println("Enter a number to find its cube:");
+    double a = sc.nextDouble();
+    return a * a * a;
+}
+
+public static double squareRoot(Scanner sc) {
+    System.out.println("Enter a number to find its square root:");
+    double a= sc.nextDouble();
+    if (a < 0) {
+        System.out.println("Error: It is a Negitive Number");
+    
+    }
+    return Math.sqrt(x);
+}
+
+public static double power(Scanner sc) {
+    System.out.println("Enter two numbers to find the first number raised to the power of the second number:");
+    double a = sc.nextDouble();
+    double b = sc.nextDouble();
+    return Math.pow(a, b);
+}
+
+public static double root(Scanner sc) {
+    System.out.println("Enter two numbers to find the a-th root of b:");
+    double a = sc.nextDouble();
+    double b = sc.nextDouble();
+    if (a == 0) {
+        System.out.println("Error: zeroth root is undefined");
+     
+    }
+    if (b<0 && a%2==0) {
+        System.out.println("No negative number roots");
+       
+    }
+    return Math.pow(b,1.0/a);
+}    
+}
